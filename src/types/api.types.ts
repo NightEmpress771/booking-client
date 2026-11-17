@@ -10,6 +10,8 @@ export interface Pagination {
   page: number;
   limit: number;
   total: number;
+  totalPages: number;
+  hasMore: boolean;
 }
 
 export interface PaginatedResponse<T> {
@@ -19,4 +21,10 @@ export interface PaginatedResponse<T> {
 
 export interface ApiError {
   error: string;
+}
+
+export interface AuthResponse {
+  message: string;
+  user: User;
+  tokens: { accessToken: string; refreshToken: string };
 }
