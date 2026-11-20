@@ -28,4 +28,8 @@ export const usersService = {
   remove: async (id: number) => {
     await api.delete(`/users/${id}`);
   },
+  updateRole: async (id: number, role: User['role']) => {
+    const { data } = await api.patch<User>(`/users/${id}/role`, { role });
+    return data;
+  },
 };
